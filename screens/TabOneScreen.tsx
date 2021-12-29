@@ -9,13 +9,26 @@ export default function TabOneScreen({
 }: RootTabScreenProps<"TabOne">) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Random Number TODO</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
+      <Text>
+        TODO .. Add button here that displays a new random number between 0 and
+        100 everytime it is clicked.
+      </Text>
+      <View
+        style={styles.separator}
+        lightColor="#eee"
+        darkColor="rgba(255,255,255,0.1)"
+      />
+      <Text>
+        TODO .. Create min and max text fields, update random number button to
+        show a value between them.
+      </Text>
     </View>
   );
 }
