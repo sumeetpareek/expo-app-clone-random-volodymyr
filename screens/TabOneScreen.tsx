@@ -24,35 +24,33 @@ export default function TabOneScreen({
   };
 
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.outputContainer}>
-        <Text style={styles.bigOutput}>{count}</Text>
-      </View>
-      <View style={styles.controlsContainer}>
-        <Button
-          title="NEW RANDOM NUMBER"
-          onPress={showRandomNumber}
-          buttonStyle={styles.button}
-          containerStyle={{ margin: 0 }}
-          titleStyle={{
-            color: "white",
-            marginHorizontal: 20,
-            fontWeight: "bold",
-          }}
-        />
-        <View
-          style={styles.separator}
-          lightColor="#eee"
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text>
-          TODO .. Add fields for MIN and MAX values. Show random numbers only
-          within those bounds.
-        </Text>
-      </View>
+    <ThemeProvider>
+      <View style={styles.mainContainer}>
+        <View style={styles.outputContainer}>
+          <Text style={styles.bigOutput}>{count}</Text>
+        </View>
+        <View style={styles.controlsContainer}>
+          <Button
+            title="NEW RANDOM NUMBER"
+            onPress={showRandomNumber}
+            buttonStyle={styles.button}
+            containerStyle={{ margin: 0 }}
+            titleStyle={{
+              color: "white",
+              textAlign: "center",
+              fontWeight: "bold",
+            }}
+          />
+          <View
+            style={styles.separator}
+            lightColor="#eee"
+            darkColor="rgba(255,255,255,0.1)"
+          />
+        </View>
 
-      {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
-    </View>
+        {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
+      </View>
+    </ThemeProvider>
   );
 }
 
@@ -89,5 +87,5 @@ const styles = StyleSheet.create({
     height: 4,
     width: "80%",
   },
-  button: { backgroundColor: "rgba(214, 61, 57, 1)", width: "100%" },
+  button: { backgroundColor: "rgba(214, 61, 57, 1)" },
 });

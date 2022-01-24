@@ -8,34 +8,54 @@ import { Text, View } from "../components/Themed";
 import { Button, ThemeProvider } from "react-native-elements";
 
 export default function TabThreeScreen() {
+  const [diceArray, setDiceArray] = React.useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const rollTheDice = () => {
+    let min = 0;
+    let max = 6;
+    let rand = Math.floor(min + Math.random() * (max - min));
+    let newDiceArray = [];
+
+    for (let i = 0; i < 6; i++) {
+      newDiceArray[i] = rand == i ? true : false;
+    }
+
+    setDiceArray(newDiceArray);
+  };
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.outputContainer}>
         <View style={styles.diceFace}>
-          <Text>1</Text>
+          <Text style={styles.diceText}>{diceArray[0] ? "1" : "-"}</Text>
         </View>
         <View style={styles.diceFace}>
-          <Text>2</Text>
+          <Text style={styles.diceText}>{diceArray[1] ? "2" : "-"}</Text>
         </View>
         <View style={styles.diceFace}>
-          <Text>3</Text>
+          <Text style={styles.diceText}>{diceArray[2] ? "3" : "-"}</Text>
         </View>
         <View style={styles.diceFace}>
-          <Text>4</Text>
+          <Text style={styles.diceText}>{diceArray[3] ? "4" : "-"}</Text>
         </View>
         <View style={styles.diceFace}>
-          <Text>5</Text>
+          <Text style={styles.diceText}>{diceArray[4] ? "5" : "-"}</Text>
         </View>
         <View style={styles.diceFace}>
-          <Text>6</Text>
+          <Text style={styles.diceText}>{diceArray[5] ? "6" : "-"}</Text>
         </View>
       </View>
       <View style={styles.controlsContainer}>
         <Button
           title="ROLL THE DICE"
-          onPress={() => {
-            alert("hey");
-          }}
+          onPress={rollTheDice}
           buttonStyle={styles.button}
           containerStyle={{ margin: 0 }}
           titleStyle={{
@@ -87,6 +107,13 @@ const styles = StyleSheet.create({
     height: 100,
     margin: 4,
     backgroundColor: "rgba(214, 61, 57, 1)",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  button: { backgroundColor: "rgba(214, 61, 57, 1)", width: "100%" },
+  diceText: {
+    fontSize: 60,
+    fontWeight: "bold",
+    color: "#fff",
+  },
+  button: { backgroundColor: "rgba(214, 61, 57, 1)" },
 });

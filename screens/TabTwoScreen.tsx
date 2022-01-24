@@ -29,7 +29,7 @@ export default function TabTwoScreen() {
       </View>
       <View style={styles.controlsContainer}>
         <Button
-          title="YES or NO"
+          title="YES -or- NO"
           onPress={showYesOrNo}
           buttonStyle={styles.button}
           containerStyle={{ margin: 0 }}
@@ -38,11 +38,6 @@ export default function TabTwoScreen() {
             marginHorizontal: 20,
             fontWeight: "bold",
           }}
-        />
-        <View
-          style={styles.separator}
-          lightColor="#eee"
-          darkColor="rgba(255,255,255,0.1)"
         />
       </View>
     </View>
@@ -56,18 +51,21 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
     padding: 10,
+    width: "100%",
   },
   outputContainer: {
     flex: 4,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
   },
   controlsContainer: {
     flex: 2,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
   },
   bigOutput: {
     fontSize: 60,
@@ -82,5 +80,5 @@ const styles = StyleSheet.create({
     height: 4,
     width: "80%",
   },
-  button: { backgroundColor: "rgba(255, 193, 7, 1)", width: "100%" },
+  button: { backgroundColor: "rgba(255, 193, 7, 1)" },
 });

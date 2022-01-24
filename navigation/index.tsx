@@ -136,9 +136,7 @@ function BottomTabNavigator() {
         options={{
           title: "Misc Info",
           tabBarShowLabel: false,
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="info-circle" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <TabBarIcon name="gear" color={color} />,
         }}
       />
     </BottomTab.Navigator>

@@ -15,6 +15,10 @@ export default function TabFourScreen({
   return (
     <ThemeProvider>
       <View style={styles.contentView}>
+        {/* <Text>
+          TODO .. Add fields for MIN and MAX values. Show random numbers only
+          within those bounds.
+        </Text> */}
         <View style={{ alignItems: "center" }}>
           <View style={styles.buttonsContainer}>
             <Button
