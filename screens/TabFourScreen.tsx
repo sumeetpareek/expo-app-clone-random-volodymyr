@@ -4,7 +4,7 @@ import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
 
-import { Button, ThemeProvider } from "react-native-elements";
+import { Button, ThemeProvider, Card } from "react-native-elements";
 
 import { ScrollView } from "react-native";
 import { ButtonGroup, withTheme } from "react-native-elements";
@@ -14,7 +14,57 @@ export default function TabFourScreen({
 }: RootTabScreenProps<"TabFour">) {
   return (
     <ThemeProvider>
-      <View style={styles.contentView}>
+      <ScrollView style={styles.contentView}>
+        <View style={styles.buttonsContainer}>
+          <Card>
+            <Text>
+              [ 0 ] This simple app was made to test some foundational things in
+              an "end-to-end" manner. Things like ... Release Process [60% done]
+              ... UI libraries [50% done] ... doing color changes from central
+              theme level [0% done] ... Debugging [80% done], etcetera.
+            </Text>
+          </Card>
+          <Card>
+            <Text>
+              [ 1 ] RELEASE PROCESS: Using release channels on Expo Go is pretty
+              simple and has been done. Releasing app on Android InternalTesting
+              Playstore has been done using both manual and EAS methods (EAS =
+              Expo Application Services). Release process on Apple App Store is
+              yet to be gone through.{" "}
+            </Text>
+          </Card>
+          <Card>
+            <Text>
+              [ 2 ] UI LIBRARY: Currently this app uses the UI library titled
+              **React Native Elements** Unfortunately, it has been found bloated
+              in some places (like too many settings) and in-conflict with other
+              components in some places (like with react-nativgation). We must
+              also code with the **Native Base** UI library before committing to
+              one of them. Both will require work to address their tradeoffs.
+              Many other UI libraries like Paper, RNUI, etcetera were also
+              looked at.
+            </Text>
+          </Card>
+          <Card>
+            <Text>
+              [ 3 ] RE: CENTRAL THEME: React Native mobile styles do not work
+              the same way as HTML+CSS styles. Maintaining consistent styles and
+              colors across all components and screens from a central theme
+              requires some learning + working with UI libraries theme + a lot
+              of planning and refactoring (particularly around how to pass
+              things to other components like react-navigation). This work is
+              yet to do done.
+            </Text>
+          </Card>
+          <Card>
+            <Text>
+              Rest of this page is just a random list of Buttons from React
+              Native Elements library
+            </Text>
+          </Card>
+          <Text></Text>
+        </View>
+
         {/* <Text>
           TODO .. Add fields for MIN and MAX values. Show random numbers only
           within those bounds.
@@ -301,7 +351,7 @@ export default function TabFourScreen({
             />
           </View>
         </View>
-      </View>
+      </ScrollView>
     </ThemeProvider>
 
     // <View style={styles.container}>
@@ -357,5 +407,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     marginVertical: 20,
+    padding: 30,
   },
 });

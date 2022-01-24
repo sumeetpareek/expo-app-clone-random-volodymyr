@@ -134,7 +134,7 @@ function BottomTabNavigator() {
         name="TabFour"
         component={TabFourScreen}
         options={{
-          title: "Misc Info",
+          title: "Important Info",
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="gear" color={color} />,
         }}
