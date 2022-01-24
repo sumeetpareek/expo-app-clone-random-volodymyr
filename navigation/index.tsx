@@ -90,7 +90,7 @@ function BottomTabNavigator() {
         name="TabOne"
         component={TabOneScreen}
         options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
-          title: "Random",
+          title: "Random Number",
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="align-center" color={color} />
@@ -125,7 +125,7 @@ function BottomTabNavigator() {
         name="TabThree"
         component={TabThreeScreen}
         options={{
-          title: "Dice",
+          title: "Dice Roll",
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="th" color={color} />,
         }}
@@ -134,7 +134,7 @@ function BottomTabNavigator() {
         name="TabFour"
         component={TabFourScreen}
         options={{
-          title: "Info",
+          title: "Misc Info",
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="info-circle" color={color} />

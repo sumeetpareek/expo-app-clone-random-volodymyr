@@ -1,3 +1,5 @@
+import * as React from "react";
+
 import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
@@ -12,45 +14,80 @@ import { ButtonGroup, withTheme } from "react-native-elements";
 export default function TabOneScreen({
   navigation,
 }: RootTabScreenProps<"TabOne">) {
+  const [count, setCount] = React.useState<number>(0);
+
+  const showRandomNumber = () => {
+    let min = 0;
+    let max = 1000;
+    let rand = Math.floor(min + Math.random() * (max - min));
+    setCount(rand);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Random Number TODO</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
+    <View style={styles.mainContainer}>
+      <View style={styles.outputContainer}>
+        <Text style={styles.bigOutput}>{count}</Text>
+      </View>
+      <View style={styles.controlsContainer}>
+        <Button
+          title="NEW RANDOM NUMBER"
+          onPress={showRandomNumber}
+          buttonStyle={styles.button}
+          containerStyle={{ margin: 0 }}
+          titleStyle={{
+            color: "white",
+            marginHorizontal: 20,
+            fontWeight: "bold",
+          }}
+        />
+        <View
+          style={styles.separator}
+          lightColor="#eee"
+          darkColor="rgba(255,255,255,0.1)"
+        />
+        <Text>
+          TODO .. Add fields for MIN and MAX values. Show random numbers only
+          within those bounds.
+        </Text>
+      </View>
+
       {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
-      <Text>
-        TODO .. Add button here that displays a new random number between 0 and
-        100 everytime it is clicked.
-      </Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-      <Text>
-        TODO .. Create min and max text fields, update random number button to
-        show a value between them.
-      </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
+    flexDirection: "column",
+    justifyContent: "flex-end",
     alignItems: "center",
+    padding: 10,
+  },
+  outputContainer: {
+    flex: 4,
+    flexDirection: "row",
     justifyContent: "center",
+    alignItems: "center",
+  },
+  controlsContainer: {
+    flex: 2,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  bigOutput: {
+    fontSize: 60,
+    fontWeight: "bold",
   },
   title: {
     fontSize: 20,
     fontWeight: "bold",
   },
   separator: {
-    marginVertical: 30,
-    height: 1,
+    marginVertical: 10,
+    height: 4,
     width: "80%",
   },
+  button: { backgroundColor: "rgba(214, 61, 57, 1)", width: "100%" },
 });
